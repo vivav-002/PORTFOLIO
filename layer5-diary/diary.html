@@ -3,9 +3,8 @@
         A Small corner of my universe
     </div>
     <h2>The pages between the stars</h2>
-    <p>
-        Thoughts, art, music, and an open wall for you to leave your mark.
-    </p>
+    <p>Thoughts, art, music, and a place to leave your mark.</p>
+    <p class="diary-storage-note" id="diaryStorageNote" role="status" hidden></p>
 </div>
 
 <div class="book-stage">
@@ -44,7 +43,7 @@
                             stroke-dasharray="2.5"
                         />
                         <path
-                            d="M100 5 L108 L195 100 L108 108 L100 195 L92 108 L5 100 L92 Z"
+                            d="M100 5 L110 90 L195 100 L110 110 L100 195 L90 110 L5 100 L90 90 Z"
                             fill="none"
                             stroke="#c9c4b6"
                             stroke-width=".7"
@@ -143,7 +142,7 @@
                         <div class="eyebrow">CHAPTER I</div>
                         <h2>Thoughts & Fragments</h2>
                         <p class="chapter-desc">
-                            An open repository for reflections, essays, micro-poetry, and nocturnal musings. Share yours without signing in.
+                            Reflections, essays, micro-poetry, and late-night thoughts. Contributions are welcome without an account.
                         </p>
                     </div>
                     <div class="chapter-actions">
@@ -167,7 +166,7 @@
                 <div class="blog-feed" id="blogsFeed" aria-live="polite">
                     <div class="diary-loading-state">
                         <div class="celestial-spinner"></div>
-                        <span>Retrieving shared entries from the cosmos…</span>
+                        <span>Gathering thoughts from the archive…</span>
                     </div>
                 </div>
             </section>
@@ -183,7 +182,7 @@
                         <div class="eyebrow">CHAPTER II</div>
                         <h2>Visual Chronicles</h2>
                         <p class="chapter-desc">
-                            Artwork, photography, sketches, and visual experiments. Upload and exhibit your creations freely.
+                            Artwork, photography, sketches, and visual experiments. Add a piece to the gallery.
                         </p>
                     </div>
                     <div class="chapter-actions">
@@ -197,7 +196,7 @@
                 <div class="art-grid" id="artGallery" aria-live="polite">
                     <div class="diary-loading-state">
                         <div class="celestial-spinner"></div>
-                        <span>Loading community gallery…</span>
+                        <span>Opening the gallery…</span>
                     </div>
                 </div>
             </section>
@@ -253,7 +252,7 @@
                         <div class="eyebrow">CHAPTER IV</div>
                         <h2>Visitor Logbook</h2>
                         <p class="chapter-desc">
-                            Leave your mark before you wander back into the night. No login required.
+                            Leave a note for the next visitor. No account needed.
                         </p>
                     </div>
                 </div>
@@ -309,7 +308,7 @@
                     <div class="guestbook-stream" id="guestbookFeed" aria-live="polite">
                         <div class="diary-loading-state">
                             <div class="celestial-spinner"></div>
-                            <span>Retrieving messages from travelers…</span>
+                            <span>Opening the logbook…</span>
                         </div>
                     </div>
                 </div>
@@ -328,7 +327,7 @@
         <div class="modal-header">
             <div class="eyebrow">CHAPTER I CONTRIBUTION</div>
             <h3 id="writeBlogTitle">Write a Thought or Fragment</h3>
-            <p>Publish an essay, nocturnal thought, or poem. Visible to every visitor across the world.</p>
+            <p>Contribute an essay, nocturnal thought, or poem to the diary.</p>
         </div>
         <form id="formWriteBlog" class="modal-form" novalidate>
             <div class="hp-trap" aria-hidden="true">
@@ -363,7 +362,7 @@
             <div class="modal-actions">
                 <button type="button" class="btn-text" data-close-modal>Cancel</button>
                 <button type="submit" class="diary-cta-btn" id="btnSubmitBlog">
-                    ✦ Publish to Shared Diary
+                    ✦ Publish Thought
                 </button>
             </div>
             <div class="modal-feedback" id="blogModalStatus" aria-live="polite"></div>
@@ -378,7 +377,7 @@
         <div class="modal-header">
             <div class="eyebrow">CHAPTER II EXHIBIT</div>
             <h3 id="shareArtTitle">Share Your Art or Photograph</h3>
-            <p>Upload your drawing, photograph, or study to the public gallery.</p>
+            <p>Share a drawing, photograph, or study with the gallery.</p>
         </div>
         <form id="formShareArt" class="modal-form" novalidate>
             <div class="hp-trap" aria-hidden="true">
@@ -395,7 +394,7 @@
                         <small>Max size 5 MB</small>
                     </div>
                     <div class="drop-preview" id="dropPreview" style="display:none;">
-                        <img id="previewImg" src="" alt="Upload preview">
+                        <img id="previewImg" alt="Upload preview">
                         <button type="button" class="btn-clear-preview" id="btnClearArtPreview" title="Choose another image">✕ Change</button>
                     </div>
                 </div>
@@ -420,7 +419,7 @@
             <!-- Upload Progress Bar -->
             <div class="upload-progress-wrapper" id="artUploadProgress" style="display:none;">
                 <div class="progress-bar-fill" id="artProgressBar"></div>
-                <span class="progress-label" id="artProgressLabel">Uploading to cloud storage…</span>
+                <span class="progress-label" id="artProgressLabel">Preparing artwork…</span>
             </div>
 
             <div class="modal-actions">
@@ -495,8 +494,8 @@
         <button class="modal-close-icon" type="button" data-close-modal aria-label="Close reading view">✕</button>
         <div class="reading-meta">
             <span class="reading-tag" id="readBlogTag">Reflections</span>
-            <span class="reading-date" id="readBlogDate">October 22, 2026</span>
-            <span class="reading-author" id="readBlogAuthor">By Orion</span>
+            <span class="reading-date" id="readBlogDate"></span>
+            <span class="reading-author" id="readBlogAuthor"></span>
         </div>
         <h2 class="reading-title" id="readBlogModalTitle">Title</h2>
         <div class="reading-body" id="readBlogBody"></div>
@@ -516,13 +515,13 @@
     <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Full size artwork preview">
         <button class="modal-close-icon lightbox-close" type="button" data-close-modal aria-label="Close artwork view">✕</button>
         <div class="lightbox-media-wrapper">
-            <img id="lightboxImg" src="" alt="Artwork full view">
+            <img id="lightboxImg" alt="Artwork full view">
         </div>
         <div class="lightbox-details">
             <div class="lightbox-info">
-                <h3 id="lightboxTitle">Artwork Title</h3>
-                <div class="lightbox-creator" id="lightboxAuthor">By Artist</div>
-                <div class="lightbox-date" id="lightboxDate">Date</div>
+                <h3 id="lightboxTitle"></h3>
+                <div class="lightbox-creator" id="lightboxAuthor"></div>
+                <div class="lightbox-date" id="lightboxDate"></div>
                 <p class="lightbox-caption" id="lightboxCaption"></p>
             </div>
             <div class="lightbox-footer-actions">

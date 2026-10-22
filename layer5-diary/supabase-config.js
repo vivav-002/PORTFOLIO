@@ -12,7 +12,7 @@
     // =========================================================================
     // 1. SUPABASE CREDENTIALS CONFIGURATION
     // =========================================================================
-    // Replace these placeholder strings with your actual Supabase project credentials.
+    // Public Supabase project credentials are configured here.
     // NOTE: Only use your PUBLIC 'anon' key here. NEVER expose your service_role key!
     const SUPABASE_CONFIG = {
         URL: "https://rozysqnriwwweunrxzga.supabase.co",
@@ -100,102 +100,6 @@
     }
 
     // =========================================================================
-    // 3. SEED DATA FOR DEMO / INITIALIZATION
-    // =========================================================================
-    const INITIAL_SEED_ENTRIES = [
-        {
-            id: 'seed-blog-1',
-            type: 'blog',
-            title: 'Stargazing at 3 AM: Reflections on Solitude',
-            author: 'Orion Wanderer',
-            content: 'There is a profound stillness when the world is asleep and only the celestial lights hum above. In those quiet hours, every forgotten thought finds its echo. The universe is not empty; it is simply waiting for someone patient enough to listen.',
-            tags: ['solitude', 'astronomy', 'nightwalks'],
-            status: 'published',
-            report_count: 0,
-            created_at: new Date(Date.now() - 3600000 * 28).toISOString()
-        },
-        {
-            id: 'seed-blog-2',
-            type: 'blog',
-            title: 'Fragments of Ink & Code',
-            author: 'Eleni K.',
-            content: 'We build digital cathedrals out of logic and light, yet what stays with us are the quiet human moments — the handwritten margins of old books, songs shared across oceans, and the hope that our traces will be felt by strangers.',
-            tags: ['philosophy', 'code', 'memory'],
-            status: 'published',
-            report_count: 0,
-            created_at: new Date(Date.now() - 3600000 * 12).toISOString()
-        },
-        {
-            id: 'seed-art-1',
-            type: 'art',
-            title: 'Cosmic Constellation Study #04',
-            author: 'Mira S.',
-            content: 'Ink and gouache on cold-press paper. Exploring the tension between geometric precision and stellar drift.',
-            media_url: 'assets/Diary image.jpg',
-            status: 'published',
-            report_count: 0,
-            created_at: new Date(Date.now() - 3600000 * 48).toISOString()
-        },
-        {
-            id: 'seed-art-2',
-            type: 'art',
-            title: 'Midnight Nebula in Cyan',
-            author: 'Kaelen',
-            content: 'Digital illustration capturing an imaginary pocket of dust and hydrogen near Cassiopeia.',
-            media_url: 'assets/layer3.jpg',
-            status: 'published',
-            report_count: 0,
-            created_at: new Date(Date.now() - 3600000 * 20).toISOString()
-        },
-        {
-            id: 'seed-music-1',
-            type: 'music',
-            title: 'Deep Space Ambient & Lo-Fi Horizons',
-            author: 'Starlit Nomad',
-            content: 'Quiet instrumental landscapes to get lost in while coding or journaling at night.',
-            platform: 'youtube',
-            external_url: 'https://www.youtube.com/watch?v=5qap5aO4i9A',
-            embed_url: 'https://www.youtube-nocookie.com/embed/5qap5aO4i9A',
-            status: 'published',
-            report_count: 0,
-            created_at: new Date(Date.now() - 3600000 * 36).toISOString()
-        },
-        {
-            id: 'seed-music-2',
-            type: 'music',
-            title: 'Midnight Melancholy & Piano Vignettes',
-            author: 'Nocturne',
-            content: 'Gentle classical chords recorded on an upright felt piano.',
-            platform: 'spotify',
-            external_url: 'https://open.spotify.com/playlist/37i9dQZF1DX4sWSpwq3LiO',
-            embed_url: 'https://open.spotify.com/embed/playlist/37i9dQZF1DX4sWSpwq3LiO',
-            status: 'published',
-            report_count: 0,
-            created_at: new Date(Date.now() - 3600000 * 16).toISOString()
-        },
-        {
-            id: 'seed-guest-1',
-            type: 'guestbook',
-            title: null,
-            author: 'Astrid V.',
-            content: 'Stumbled onto this page from a distant timezone. Love the 3D book physics and celestial mood. Leaving my footprint under the stars!',
-            status: 'published',
-            report_count: 0,
-            created_at: new Date(Date.now() - 3600000 * 8).toISOString()
-        },
-        {
-            id: 'seed-guest-2',
-            type: 'guestbook',
-            title: null,
-            author: 'A Traveler from Kyoto',
-            content: '“The moon is beautiful tonight, isn’t it?” Wishing good health to whoever is reading this right now.',
-            status: 'published',
-            report_count: 0,
-            created_at: new Date(Date.now() - 3600000 * 3).toISOString()
-        }
-    ];
-
-    // =========================================================================
     // 4. SIMULATED CLOUD BACKEND (Multi-Tab & Cross-Browser-Session Sync)
     // =========================================================================
     const MOCK_STORAGE_KEY = 'portfolia_diary_cloud_entries';
@@ -218,7 +122,7 @@
             try {
                 const stored = localStorage.getItem(MOCK_STORAGE_KEY);
                 if (!stored) {
-                    localStorage.setItem(MOCK_STORAGE_KEY, JSON.stringify(INITIAL_SEED_ENTRIES));
+                    localStorage.setItem(MOCK_STORAGE_KEY, JSON.stringify([]));
                 }
             } catch (e) {
                 console.warn('Local storage write issue', e);
@@ -248,7 +152,7 @@
             try {
                 return JSON.parse(localStorage.getItem(MOCK_STORAGE_KEY) || '[]');
             } catch (e) {
-                return INITIAL_SEED_ENTRIES;
+                return [];
             }
         }
 

@@ -4,7 +4,7 @@
   const soundBtn = document.querySelector('#soundBtn');
   const soundLabel = document.querySelector('#soundLabel');
   const toast = document.querySelector('#toast');
-  let soundOn = false;
+  let soundOn = true;
   let toastTimer;
 
   window.portfolioNotify = message => {
@@ -31,10 +31,20 @@
     const frame = document.querySelector('#bgVideo');
     frame?.contentWindow?.postMessage(JSON.stringify({ event: 'command', func, args }), 'https://www.youtube-nocookie.com');
   }
+  function enableSound() {
+    sendYouTubeCommand('unMute');
+    sendYouTubeCommand('setVolume', [18]);
+    sendYouTubeCommand('playVideo');
+  }
+  document.addEventListener('load', event => {
+    if (event.target?.id === 'bgVideo' && soundOn) enableSound();
+  }, true);
+  enableSound();
+
   soundBtn?.addEventListener('click', () => {
     soundOn = !soundOn;
-    sendYouTubeCommand(soundOn ? 'unMute' : 'mute');
-    if (soundOn) { sendYouTubeCommand('setVolume', [18]); sendYouTubeCommand('playVideo'); }
+    if (soundOn) enableSound();
+    else sendYouTubeCommand('mute');
     soundLabel.textContent = soundOn ? 'Sound on' : 'Sound off';
     soundBtn.setAttribute('aria-pressed', String(soundOn));
   });

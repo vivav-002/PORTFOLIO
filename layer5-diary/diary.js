@@ -247,23 +247,38 @@ window.initDiary = function (sectionEl) {
     function updateCloudStatusUI() {
         const badge = root.querySelector('#cloudStatusBadge');
         const desc = root.querySelector('#cloudStatusDescription');
-        if (!window.DiaryBackend) return;
+        const storageNote = root.querySelector('#diaryStorageNote');
+        if (!window.DiaryBackend) {
+            if (storageNote) {
+                storageNote.textContent = 'The diary is temporarily unavailable.';
+                storageNote.hidden = false;
+            }
+            return;
+        }
 
         if (window.DiaryBackend.isRealCloud) {
+            if (storageNote) {
+                storageNote.textContent = '';
+                storageNote.hidden = true;
+            }
             if (badge) {
                 badge.textContent = '● Shared Supabase DB Active';
                 badge.classList.remove('demo-mode');
             }
             if (desc) {
-                desc.textContent = 'Connected directly to your shared Supabase PostgreSQL database & media storage.';
+                desc.textContent = 'Contributions are stored in the shared online archive.';
             }
         } else {
+            if (storageNote) {
+                storageNote.textContent = 'Preview mode: contributions are saved only in this browser and are not shared online.';
+                storageNote.hidden = false;
+            }
             if (badge) {
-                badge.textContent = '○ Multi-Tab Collaborative Bus';
+                badge.textContent = '○ Browser-only preview';
                 badge.classList.add('demo-mode');
             }
             if (desc) {
-                desc.textContent = 'Operating in multi-tab collaborative simulated cloud. Synchronized across your browser sessions and tabs.';
+                desc.textContent = 'Contributions are saved only in this browser and are not shared online.';
             }
         }
     }
@@ -322,7 +337,7 @@ window.initDiary = function (sectionEl) {
             renderBlogsList(entries);
         } catch (err) {
             console.error('Error fetching blogs:', err);
-            blogsFeed.innerHTML = '<div class="diary-loading-state">Could not retrieve entries from the shared archive.</div>';
+            blogsFeed.innerHTML = '<div class="diary-empty-state">Thoughts could not be loaded right now. Please try again later.</div>';
         }
     }
 
@@ -335,8 +350,10 @@ window.initDiary = function (sectionEl) {
 
         if (filtered.length === 0) {
             const emptyEl = document.createElement('div');
-            emptyEl.className = 'diary-loading-state';
-            emptyEl.textContent = 'No thoughts found under this category. Be the first to share one!';
+            emptyEl.className = 'diary-empty-state';
+            emptyEl.textContent = activeBlogFilter === 'all'
+                ? 'No thoughts yet. Be the first to share one.'
+                : 'No thoughts in this theme yet.';
             blogsFeed.appendChild(emptyEl);
             return;
         }
@@ -456,7 +473,7 @@ window.initDiary = function (sectionEl) {
             renderArtGallery(entries);
         } catch (err) {
             console.error('Error fetching art:', err);
-            artGallery.innerHTML = '<div class="diary-loading-state">Could not load artwork gallery.</div>';
+            artGallery.innerHTML = '<div class="diary-empty-state">The gallery could not be loaded right now. Please try again later.</div>';
         }
     }
 
@@ -464,8 +481,8 @@ window.initDiary = function (sectionEl) {
         artGallery.innerHTML = '';
         if (entries.length === 0) {
             const emptyEl = document.createElement('div');
-            emptyEl.className = 'diary-loading-state';
-            emptyEl.textContent = 'No artworks shared yet. Exhibit your drawing or photography!';
+            emptyEl.className = 'diary-empty-state';
+            emptyEl.textContent = 'No artwork here yet. The gallery is ready for its first piece.';
             artGallery.appendChild(emptyEl);
             return;
         }
@@ -526,7 +543,7 @@ window.initDiary = function (sectionEl) {
             renderMusicFeed(entries);
         } catch (err) {
             console.error('Error fetching music:', err);
-            musicFeed.innerHTML = '<div class="diary-loading-state">Could not load music contributions.</div>';
+            musicFeed.innerHTML = '<div class="diary-empty-state">The soundtrack could not be loaded right now. Please try again later.</div>';
         }
     }
 
@@ -539,8 +556,10 @@ window.initDiary = function (sectionEl) {
 
         if (filtered.length === 0) {
             const emptyEl = document.createElement('div');
-            emptyEl.className = 'diary-loading-state';
-            emptyEl.textContent = 'No playlists under this platform filter. Add yours!';
+            emptyEl.className = 'diary-empty-state';
+            emptyEl.textContent = activeMusicFilter === 'all'
+                ? 'No music here yet. Add a playlist to start the collection.'
+                : `No ${activeMusicFilter} playlists in the collection yet.`;
             musicFeed.appendChild(emptyEl);
             return;
         }
@@ -563,8 +582,13 @@ window.initDiary = function (sectionEl) {
 
             const meta = document.createElement('div');
             meta.className = 'music-card-meta';
-            meta.textContent = `Curated by ${entry.author || 'Starlit Nomad'} • ${formatDate(entry.created_at)}`;
-            titleWrap.appendChild(meta);
+            const metaItems = [];
+            if (entry.author) metaItems.push(`Shared by ${entry.author}`);
+            if (entry.created_at) metaItems.push(formatDate(entry.created_at));
+            if (metaItems.length) {
+                meta.textContent = metaItems.join(' • ');
+                titleWrap.appendChild(meta);
+            }
 
             header.appendChild(titleWrap);
 
@@ -665,7 +689,7 @@ window.initDiary = function (sectionEl) {
             renderGuestbookFeed(entries);
         } catch (err) {
             console.error('Error fetching guestbook:', err);
-            guestbookFeed.innerHTML = '<div class="diary-loading-state">Could not load visitor messages.</div>';
+            guestbookFeed.innerHTML = '<div class="diary-empty-state">The logbook could not be loaded right now. Please try again later.</div>';
         }
     }
 
@@ -673,8 +697,8 @@ window.initDiary = function (sectionEl) {
         guestbookFeed.innerHTML = '';
         if (entries.length === 0) {
             const emptyEl = document.createElement('div');
-            emptyEl.className = 'diary-loading-state';
-            emptyEl.textContent = 'The logbook is quiet. Leave the first mark on this page!';
+            emptyEl.className = 'diary-empty-state';
+            emptyEl.textContent = 'No messages yet. The logbook is ready for its first note.';
             guestbookFeed.appendChild(emptyEl);
             return;
         }
@@ -996,7 +1020,7 @@ window.initDiary = function (sectionEl) {
             if (res.success) {
                 lastSubmissionTime = Date.now();
                 feedback.className = 'modal-feedback success';
-                feedback.textContent = '✦ Your thought has been published to the shared universe!';
+                feedback.textContent = '✦ Your thought has been published.';
                 feedback.style.display = 'block';
 
                 setTimeout(() => {
@@ -1004,15 +1028,15 @@ window.initDiary = function (sectionEl) {
                     formWriteBlog.reset();
                     feedback.style.display = 'none';
                     submitBtn.disabled = false;
-                    submitBtn.textContent = '✦ Publish to Shared Diary';
+                    submitBtn.textContent = '✦ Publish Thought';
                     updateVaultCountUI();
                     loadBlogs();
-                    notify('Thought published to shared Diary!');
+                    notify('Thought published.');
                 }, 1200);
             }
         } catch (err) {
             submitBtn.disabled = false;
-            submitBtn.textContent = '✦ Publish to Shared Diary';
+            submitBtn.textContent = '✦ Publish Thought';
             feedback.className = 'modal-feedback error';
             feedback.textContent = err.message || 'Failed to publish entry.';
             feedback.style.display = 'block';
@@ -1081,7 +1105,7 @@ window.initDiary = function (sectionEl) {
         e.stopPropagation();
         selectedArtFile = null;
         artFileInput.value = '';
-        previewImg.src = '';
+        previewImg.removeAttribute('src');
         dropPreview.style.display = 'none';
         dropPrompt.style.display = 'flex';
     });
@@ -1129,7 +1153,7 @@ window.initDiary = function (sectionEl) {
             if (res.success) {
                 lastSubmissionTime = Date.now();
                 feedback.className = 'modal-feedback success';
-                feedback.textContent = '✦ Artwork exhibited successfully in the public gallery!';
+                feedback.textContent = '✦ Your artwork has been added to the gallery.';
                 feedback.style.display = 'block';
 
                 setTimeout(() => {
@@ -1144,7 +1168,7 @@ window.initDiary = function (sectionEl) {
                     submitBtn.textContent = '✦ Exhibit Artwork';
                     updateVaultCountUI();
                     loadArt();
-                    notify('Artwork exhibited in public gallery!');
+                    notify('Artwork added to the gallery.');
                 }, 1200);
             }
         } catch (err) {
@@ -1166,7 +1190,7 @@ window.initDiary = function (sectionEl) {
         if (!checkRateLimit()) return;
 
         const platform = formAddMusic.platform.value;
-        const author = formAddMusic.author.value.trim() || 'Starlit Nomad';
+        const author = formAddMusic.author.value.trim() || 'Anonymous listener';
         const title = formAddMusic.title.value.trim();
         const url = formAddMusic.url.value.trim();
         const desc = formAddMusic.desc.value.trim();
@@ -1203,7 +1227,7 @@ window.initDiary = function (sectionEl) {
             if (res.success) {
                 lastSubmissionTime = Date.now();
                 feedback.className = 'modal-feedback success';
-                feedback.textContent = '✦ Soundtrack added to the open archive!';
+                feedback.textContent = '✦ The soundtrack has been added.';
                 feedback.style.display = 'block';
 
                 setTimeout(() => {
@@ -1214,7 +1238,7 @@ window.initDiary = function (sectionEl) {
                     submitBtn.textContent = '✦ Add to Soundtrack';
                     updateVaultCountUI();
                     loadMusic();
-                    notify('Playlist added to shared Soundtrack!');
+                    notify('Playlist added to the soundtrack.');
                 }, 1200);
             }
         } catch (err) {
@@ -1270,14 +1294,14 @@ window.initDiary = function (sectionEl) {
                 if (guestCharCount) guestCharCount.textContent = '600';
                 if (statusEl) {
                     statusEl.style.color = '#155724';
-                    statusEl.textContent = '✦ Your mark has been etched into history!';
+                    statusEl.textContent = '✦ Your message has been added.';
                 }
 
                 submitBtn.disabled = false;
                 submitBtn.textContent = '✦ Leave a Mark';
                 updateVaultCountUI();
                 loadGuestbook();
-                notify('Guestbook message posted to shared logbook!');
+                notify('Guestbook message added.');
 
                 setTimeout(() => {
                     if (statusEl) statusEl.textContent = '';

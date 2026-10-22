@@ -89,22 +89,6 @@
     margin-top: 30px;
 }
 
-.socials {
-    display: flex;
-    gap: 18px;
-    margin-top: 34px;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.socials a {
-    opacity: 0.8;
-}
-
-.socials a:hover {
-    color: var(--blue);
-}
-
 .home-foot {
     position: absolute;
     z-index: 2;
