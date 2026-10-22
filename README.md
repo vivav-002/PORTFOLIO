@@ -58,6 +58,11 @@ PORTFOLIA is an evolving project. Future improvements include richer project cas
 ## ✦ Feedback
 
 Suggestions, ideas, and constructive feedback are welcome.
+<img width="1917" height="916" alt="image" src="https://github.com/user-attachments/assets/08f01281-f87c-4b25-8057-1fe95d481823" />
+<img width="1911" height="901" alt="image" src="https://github.com/user-attachments/assets/e44ac2eb-3cba-46c9-a447-e56320403b92" />
+
+
+
 
 ---
 
