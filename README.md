@@ -43,9 +43,10 @@ A local HTTP server is recommended because the website loads its sections dynami
 ## ✦ Screenshots
 
 Explore the website's visual design and interactions through the screenshots below.
-<img width="1902" height="902" alt="Screenshot 2026-10-22 234659" src="https://github.com/user-attachments/assets/d44a007f-88f6-4a2b-847e-6d7e45024c25" />
 
-<img width="1897" height="833" alt="Screenshot 2026-10-22 234807" src="https://github.com/user-attachments/assets/b7717217-e630-4bff-827f-81305cbe5fc4" />
+<img width="1912" height="911" alt="image" src="https://github.com/user-attachments/assets/67493198-7976-4e2e-9bea-7e0a1ea451a5" />
+<img width="1897" height="833" alt="Screenshot 2026-10-22 234807" src="https://github.com/user-attachments/assets/9add3cb2-6d3e-481c-b1e7-871482cebd6a" />
+
 
 
 <!-- Add screenshots of the Home, Projects, Achievements, and Diary sections here. -->
