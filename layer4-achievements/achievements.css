@@ -1,0 +1,42 @@
+#achievements{display:flex;align-items:center;overflow:visible;padding:110px clamp(24px,6vw,92px) 66px;background:#080909}
+.achievements-bg,.achievements-vignette{position:absolute;inset:0;pointer-events:none}
+.achievements-bg{z-index:0;background:#111 url("../assets/layer4.png") center/cover no-repeat;filter:grayscale(1) contrast(1.04) brightness(.68);transform:scale(1.02);transition:transform 1.3s ease}
+#achievements.visible .achievements-bg{transform:scale(1)}
+.achievements-vignette{z-index:1;background:linear-gradient(90deg,#050606e8 0%,#050606cc 36%,#05060638 72%,#05060680 100%),linear-gradient(0deg,#050606aa,transparent 58%)}
+.achievements-layout{position:relative;z-index:2;width:100%;max-width:1320px;margin:auto;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(285px,.8fr);gap:clamp(42px,8vw,120px);align-items:center}
+.achievement-copy{max-width:680px}
+.achievement-copy .eyebrow{margin:0;color:#ddd;letter-spacing:.24em}
+.achievement-copy h2{margin:18px 0;font-size:clamp(50px,5.8vw,82px);line-height:.9;letter-spacing:-.07em;color:#f4f4f4}
+.achievement-copy h2 span{display:block;color:#aaa}
+.achievement-intro{margin:0;color:#d5d5d5;font-size:10px;line-height:1.9;letter-spacing:.18em;text-transform:uppercase}
+.achievement-list{display:grid;gap:11px;margin-top:25px}
+.achievement{display:grid;grid-template-columns:25px 64px minmax(0,1fr) max-content;gap:13px;align-items:center;min-height:86px;padding:11px 14px;border:1px solid #e4e4e444;border-radius:11px;background:#11121296;box-shadow:0 12px 34px #0004;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:border-color .22s,background .22s,transform .22s}
+.achievement:hover{transform:translateX(3px);border-color:#eee9;background:#191919c9}
+.achievement-number,.achievement time{color:#d0d0d0;font-size:9px;letter-spacing:.08em}
+.achievement time{display:block;margin-top:6px}
+.achievement-visual{display:block;width:64px;height:60px;object-fit:cover;border:1px solid #ffffff35;border-radius:7px;background:#202020}
+.achievement h3{margin:0;color:#f2f2f2;font-size:12px;font-weight:700;letter-spacing:.02em}
+.achievement p{margin:5px 0 0;color:#c9c9c9;font-size:10px;line-height:1.5}
+.achievement-note{margin:10px 0 0;color:#c5c5c5;font-size:9px;line-height:1.5}
+.achievement-signoff{display:grid;grid-template-columns:45px 1fr;gap:12px;align-items:start;margin:20px 0 0;color:#dedede;font-size:9px;line-height:1.9;letter-spacing:.17em;text-transform:uppercase}
+.achievement-signoff>span{color:#c7c7c7}
+.achievement-signoff p{margin:0;padding-left:13px;border-left:1px solid #cfcfcf80}
+.skills-panels{display:grid;gap:10px}
+.skills-label{display:flex;align-items:center;gap:10px;margin:0 0 4px;color:#e5e5e5;font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+.skills-label:before{width:7px;height:7px;border-radius:50%;background:#eee;box-shadow:0 0 10px #fff;content:""}
+.skills-label:after{height:1px;flex:1;background:#ffffff48;content:""}
+.skill-panel{padding:14px;border:1px solid #e7e7e75c;border-radius:10px;background:#111212a1;box-shadow:0 12px 32px #0004;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.skill-panel header{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.panel-art{width:27px;height:27px;border:1px solid #eee9;border-radius:7px;background:#242626;object-fit:cover}
+.panel-icon{width:27px;height:27px;display:grid;place-items:center;border:1px solid #eee9;border-radius:7px;color:#f1f1f1;font-size:10px;font-weight:700}
+.skill-panel h3{margin:0;color:#f1f1f1;font-size:10px;letter-spacing:.06em}
+.tools-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px 6px}
+.tools-grid span{display:grid;justify-items:center;gap:5px;min-width:0;color:#e0e0e0;font-size:8px;line-height:1.2;text-align:center}
+.tools-grid b{width:32px;height:32px;display:grid;place-items:center;border:1px solid #ffffff72;border-radius:8px;background:#ffffff0d;color:#f4f4f4;font-size:9px}
+.skills-signoff{display:flex;align-items:center;gap:10px;margin:2px 0 0;color:#dedede;font-size:8px;letter-spacing:.15em;text-align:right;text-transform:uppercase}
+.skills-signoff span{height:1px;flex:1;background:#ffffff48}
+@media(max-width:1000px){.achievements-layout{grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);gap:35px}.achievement-copy h2{font-size:clamp(48px,6vw,68px)}.achievement{grid-template-columns:22px 55px minmax(0,1fr);gap:10px}.achievement-visual{width:55px;height:54px}}
+@media(max-width:800px){#achievements{padding:100px 22px 52px}.achievements-layout{grid-template-columns:1fr;gap:30px}.achievement-copy{max-width:680px}.skills-panels{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.skills-label,.skills-signoff{grid-column:1/-1}.achievement-copy h2{font-size:clamp(52px,9vw,72px)}}
+@media(max-width:560px){.skills-panels{grid-template-columns:1fr}.skills-signoff{grid-column:1}.achievement{grid-template-columns:20px 52px minmax(0,1fr);padding:11px}.achievement-visual{width:52px;height:52px}.achievement h3{font-size:11px}.achievement p{font-size:9px}.achievement time{font-size:8px}.tools-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:390px){.achievement{grid-template-columns:18px 44px minmax(0,1fr);gap:8px}.achievement-visual{width:44px;height:48px}}
+@media(prefers-reduced-motion:reduce){.achievements-bg,.achievement{transition:none}}

@@ -1,0 +1,584 @@
+<div class="diary-intro">
+    <div class="eyebrow">
+        A Small corner of my universe
+    </div>
+    <h2>The pages between the stars</h2>
+    <p>
+        Thoughts, art, music, and an open wall for you to leave your mark.
+    </p>
+</div>
+
+<div class="book-stage">
+    <button
+        class="book"
+        id="openBook"
+        type="button"
+        aria-label="Open the collaborative diary"
+    >
+        <span class="book-spine"></span>
+        <span class="book-pages"></span>
+
+        <span class="book-cover">
+            <span class="cover-number">05</span>
+            <span class="cover-ornament">
+                <span class="cover-top">
+                    PARTH &nbsp; YADAV
+                </span>
+                <span class="cover-emblem">
+                    <svg viewBox="0 0 200 200" aria-hidden="true">
+                        <circle
+                            cx="100"
+                            cy="100"
+                            r="93"
+                            fill="none"
+                            stroke="#c9c4b6"
+                            stroke-width=".7"
+                        />
+                        <circle
+                            cx="100"
+                            cy="100"
+                            r="80"
+                            fill="none"
+                            stroke="#c9c4b6"
+                            stroke-width=".6"
+                            stroke-dasharray="2.5"
+                        />
+                        <path
+                            d="M100 5 L108 L195 100 L108 108 L100 195 L92 108 L5 100 L92 Z"
+                            fill="none"
+                            stroke="#c9c4b6"
+                            stroke-width=".7"
+                        />
+                    </svg>
+
+                    <span class="cover-art" id="coverART">
+                        <img
+                            src="assets/Diary image.jpg"
+                            alt="Illustration from a birthday drawing by my dad"
+                            onerror="this.onerror=null; this.src='../assets/Diary%20image.jpg';"
+                        >
+                    </span>
+                </span>
+                <span class="moon-row">
+                    ☾ ◔ ◑ ● ◐ ◕ ☽
+                </span>
+                <span class="cover-title">
+                    <small>COLLABORATIVE ARCHIVE</small>
+                    THE<br>
+                    UNWRITTEN<br>
+                    CHAPTERS
+                </span>
+                <span class="cover-top">
+                    AN OPEN SKY IN PROGRESS
+                </span>
+            </span>
+        </span>
+    </button>
+    <div class="book-hint">
+        Click the Book to open the collaborative diary
+    </div>
+</div>
+
+<!-- Diary inside view -->
+<div 
+    class="diary-inside"
+    id="diaryInside"
+    aria-hidden="true"
+    role="dialog"
+    aria-label="Collaborative Diary Interior"
+>
+    <!-- Top toolbar -->
+    <div class="diary-toolbar">
+        <div class="toolbar-brand">
+            <span class="celestial-gem">✧</span>
+            <span class="toolbar-title">THE UNWRITTEN CHAPTERS</span>
+        </div>
+        <div class="toolbar-actions">
+            <button
+                class="btn diary-close"
+                id="closeBook"
+                type="button"
+                aria-label="Close diary"
+            >
+                Close Book ✕
+            </button>
+        </div>
+    </div>
+
+    <div class="diary-inner">
+        <!-- Sidebar Navigation -->
+        <aside class="diary-tabs" aria-label="Diary Sections">
+            <div class="tabs-header">
+                <span class="tabs-title">CONTENTS</span>
+            </div>
+            <button class="active" data-tab="blogs" id="tabBtnBlogs" type="button">
+                <span class="tab-icon">✧</span>
+                <span class="tab-label">Blogs & Thoughts</span>
+            </button>
+            <button data-tab="art" id="tabBtnArt" type="button">
+                <span class="tab-icon">✧</span>
+                <span class="tab-label">My Art & Gallery</span>
+            </button>
+            <button data-tab="music" id="tabBtnMusic" type="button">
+                <span class="tab-icon">♫</span>
+                <span class="tab-label">Soundtrack</span>
+            </button>
+            <button data-tab="guestbook" id="tabBtnGuestbook" type="button">
+                <span class="tab-icon">✎</span>
+                <span class="tab-label">Guestbook</span>
+            </button>
+        </aside>
+
+        <!-- Main Pages Area -->
+        <div class="diary-page">
+            
+            <!-- SECTION 1: BLOGS & THOUGHTS -->
+            <section
+                class="diary-content active"
+                id="tab-blogs"
+                tabindex="0"
+            >
+                <div class="chapter-header">
+                    <div>
+                        <div class="eyebrow">CHAPTER I</div>
+                        <h2>Thoughts & Fragments</h2>
+                        <p class="chapter-desc">
+                            An open repository for reflections, essays, micro-poetry, and nocturnal musings. Share yours without signing in.
+                        </p>
+                    </div>
+                    <div class="chapter-actions">
+                        <button class="diary-cta-btn" id="btnOpenWriteBlog" type="button">
+                            ✦ Write a Thought
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tag Filter Bar -->
+                <div class="category-filters" id="blogFilters">
+                    <button class="cat-pill active" data-filter="all" type="button">All Thoughts</button>
+                    <button class="cat-pill" data-filter="reflections" type="button">Reflections</button>
+                    <button class="cat-pill" data-filter="philosophy" type="button">Philosophy</button>
+                    <button class="cat-pill" data-filter="poetry" type="button">Poetry</button>
+                    <button class="cat-pill" data-filter="code" type="button">Code & Logic</button>
+                    <button class="cat-pill" data-filter="nightwalks" type="button">Nightwalks</button>
+                </div>
+
+                <!-- Feed Container -->
+                <div class="blog-feed" id="blogsFeed" aria-live="polite">
+                    <div class="diary-loading-state">
+                        <div class="celestial-spinner"></div>
+                        <span>Retrieving shared entries from the cosmos…</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: MY ART -->
+            <section
+                class="diary-content"
+                id="tab-art"
+                tabindex="0"
+            >
+                <div class="chapter-header">
+                    <div>
+                        <div class="eyebrow">CHAPTER II</div>
+                        <h2>Visual Chronicles</h2>
+                        <p class="chapter-desc">
+                            Artwork, photography, sketches, and visual experiments. Upload and exhibit your creations freely.
+                        </p>
+                    </div>
+                    <div class="chapter-actions">
+                        <button class="diary-cta-btn" id="btnOpenShareArt" type="button">
+                            ✦ Share Artwork
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Art Gallery Grid -->
+                <div class="art-grid" id="artGallery" aria-live="polite">
+                    <div class="diary-loading-state">
+                        <div class="celestial-spinner"></div>
+                        <span>Loading community gallery…</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: SOUNDTRACK -->
+            <section 
+                class="diary-content"
+                id="tab-music"
+                tabindex="0"
+            >
+                <div class="chapter-header">
+                    <div>
+                        <div class="eyebrow">CHAPTER III</div>
+                        <h2>Collective Soundtrack</h2>
+                        <p class="chapter-desc">
+                            Songs and playlists that accompany late nights and travels. Connect Spotify and YouTube links.
+                        </p>
+                    </div>
+                    <div class="chapter-actions">
+                        <button class="diary-cta-btn" id="btnOpenAddMusic" type="button">
+                            ✦ Add a Playlist
+                        </button>
+                    </div>
+                </div>
+
+                <div class="category-filters" id="musicFilters">
+                    <button class="cat-pill active" data-filter="all" type="button">All Music</button>
+                    <button class="cat-pill" data-filter="spotify" type="button">Spotify</button>
+                    <button class="cat-pill" data-filter="youtube" type="button">YouTube</button>
+                </div>
+
+                <!-- Music Feed -->
+                <div class="music-feed" id="musicFeed" aria-live="polite">
+                    <div class="diary-loading-state">
+                        <div class="celestial-spinner"></div>
+                        <span>Tuning into the playlist frequencies…</span>
+                    </div>
+                </div>
+
+                <p class="note music-policy-note">
+                    External playlists are embedded securely where permitted by provider policies or rendered with verified links. Audio is never illegally re-hosted.
+                </p>
+            </section>
+
+            <!-- SECTION 4: GUESTBOOK -->
+            <section 
+                class="diary-content"
+                id="tab-guestbook"
+                tabindex="0"
+            >
+                <div class="chapter-header">
+                    <div>
+                        <div class="eyebrow">CHAPTER IV</div>
+                        <h2>Visitor Logbook</h2>
+                        <p class="chapter-desc">
+                            Leave your mark before you wander back into the night. No login required.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Submission Box -->
+                <div class="guestbook-composer-card">
+                    <form class="guest-form" id="guestForm" novalidate>
+                        <!-- Anti-spam Honeypot -->
+                        <div class="hp-trap" aria-hidden="true">
+                            <label for="gb_hp">Leave this empty:</label>
+                            <input type="text" id="gb_hp" name="website_url" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <div class="form-row-compact">
+                            <div class="form-group">
+                                <label for="guestName">YOUR PSEUDONYM OR ALIAS</label>
+                                <input 
+                                    id="guestName"
+                                    name="name"
+                                    type="text"
+                                    maxlength="40"
+                                    placeholder="e.g. Starfarer, Stargazer, An Anonymous Soul"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guestMessage">YOUR MESSAGE TO THE COSMOS *</label>
+                            <textarea
+                                id="guestMessage"
+                                name="message"
+                                maxlength="600"
+                                required
+                                placeholder="Write a note, a memory, or kind words for the next traveler who reads this page…"
+                            ></textarea>
+                            <div class="char-countdown">
+                                <span id="guestCharCount">600</span> characters remaining
+                            </div>
+                        </div>
+
+                        <div class="form-footer-action">
+                            <button class="diary-cta-btn" type="submit" id="guestSubmitBtn">
+                                ✦ Leave a Mark
+                            </button>
+                            <div id="formStatus" class="form-status-msg" aria-live="polite"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Feed of guestbook entries -->
+                <div class="guestbook-feed-container">
+                    <div class="guestbook-feed-title">RECENT ENTRIES</div>
+                    <div class="guestbook-stream" id="guestbookFeed" aria-live="polite">
+                        <div class="diary-loading-state">
+                            <div class="celestial-spinner"></div>
+                            <span>Retrieving messages from travelers…</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+<!-- ========================================================================= -->
+<!-- MODALS & DIALOGS -->
+<!-- ========================================================================= -->
+
+<!-- 1. WRITE THOUGHT MODAL -->
+<div class="diary-modal-backdrop" id="modalWriteBlog" aria-hidden="true">
+    <div class="diary-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="writeBlogTitle">
+        <button class="modal-close-icon" type="button" data-close-modal aria-label="Close dialog">✕</button>
+        <div class="modal-header">
+            <div class="eyebrow">CHAPTER I CONTRIBUTION</div>
+            <h3 id="writeBlogTitle">Write a Thought or Fragment</h3>
+            <p>Publish an essay, nocturnal thought, or poem. Visible to every visitor across the world.</p>
+        </div>
+        <form id="formWriteBlog" class="modal-form" novalidate>
+            <div class="hp-trap" aria-hidden="true">
+                <input type="text" name="website_url" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="blogTitle">TITLE *</label>
+                <input id="blogTitle" name="title" type="text" required maxlength="100" placeholder="A meaningful or poetic title">
+            </div>
+            <div class="form-grid-2">
+                <div class="form-group">
+                    <label for="blogAuthor">PSEUDONYM / DISPLAY NAME</label>
+                    <input id="blogAuthor" name="author" type="text" maxlength="40" placeholder="Anonymous Wanderer">
+                </div>
+                <div class="form-group">
+                    <label for="blogCategory">PRIMARY THEME / TAG</label>
+                    <select id="blogCategory" name="category">
+                        <option value="reflections">Reflections</option>
+                        <option value="philosophy">Philosophy</option>
+                        <option value="poetry">Poetry</option>
+                        <option value="code">Code & Logic</option>
+                        <option value="nightwalks">Nightwalks</option>
+                        <option value="general">Uncategorized</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="blogContent">YOUR WRITING *</label>
+                <textarea id="blogContent" name="content" required minlength="10" maxlength="4000" rows="8" placeholder="Put your thoughts into words…"></textarea>
+                <div class="char-countdown"><span id="blogCharCount">4000</span> chars left</div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn-text" data-close-modal>Cancel</button>
+                <button type="submit" class="diary-cta-btn" id="btnSubmitBlog">
+                    ✦ Publish to Shared Diary
+                </button>
+            </div>
+            <div class="modal-feedback" id="blogModalStatus" aria-live="polite"></div>
+        </form>
+    </div>
+</div>
+
+<!-- 2. SHARE ARTWORK MODAL -->
+<div class="diary-modal-backdrop" id="modalShareArt" aria-hidden="true">
+    <div class="diary-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="shareArtTitle">
+        <button class="modal-close-icon" type="button" data-close-modal aria-label="Close dialog">✕</button>
+        <div class="modal-header">
+            <div class="eyebrow">CHAPTER II EXHIBIT</div>
+            <h3 id="shareArtTitle">Share Your Art or Photograph</h3>
+            <p>Upload your drawing, photograph, or study to the public gallery.</p>
+        </div>
+        <form id="formShareArt" class="modal-form" novalidate>
+            <div class="hp-trap" aria-hidden="true">
+                <input type="text" name="website_url" tabindex="-1" autocomplete="off">
+            </div>
+            <!-- File Drag & Drop Zone -->
+            <div class="form-group">
+                <label>SELECT IMAGE FILE * (JPG, PNG, WebP, GIF &mdash; Max 5MB)</label>
+                <div class="drop-zone" id="artDropZone">
+                    <input type="file" id="artFileInput" accept="image/jpeg,image/png,image/webp,image/gif" required class="file-input-hidden">
+                    <div class="drop-prompt" id="dropPrompt">
+                        <span class="drop-icon">🖼</span>
+                        <span class="drop-text">Drag image here or <strong>browse files</strong></span>
+                        <small>Max size 5 MB</small>
+                    </div>
+                    <div class="drop-preview" id="dropPreview" style="display:none;">
+                        <img id="previewImg" src="" alt="Upload preview">
+                        <button type="button" class="btn-clear-preview" id="btnClearArtPreview" title="Choose another image">✕ Change</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-grid-2">
+                <div class="form-group">
+                    <label for="artTitle">ARTWORK TITLE *</label>
+                    <input id="artTitle" name="title" type="text" required maxlength="80" placeholder="Title of your piece">
+                </div>
+                <div class="form-group">
+                    <label for="artAuthor">ARTIST / PSEUDONYM</label>
+                    <input id="artAuthor" name="author" type="text" maxlength="40" placeholder="e.g. Mira S., Anonymous Artist">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="artCaption">CAPTION & STORY</label>
+                <textarea id="artCaption" name="caption" maxlength="500" rows="3" placeholder="Medium, inspiration, or meaning behind the artwork…"></textarea>
+            </div>
+
+            <!-- Upload Progress Bar -->
+            <div class="upload-progress-wrapper" id="artUploadProgress" style="display:none;">
+                <div class="progress-bar-fill" id="artProgressBar"></div>
+                <span class="progress-label" id="artProgressLabel">Uploading to cloud storage…</span>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-text" data-close-modal>Cancel</button>
+                <button type="submit" class="diary-cta-btn" id="btnSubmitArt">
+                    ✦ Exhibit Artwork
+                </button>
+            </div>
+            <div class="modal-feedback" id="artModalStatus" aria-live="polite"></div>
+        </form>
+    </div>
+</div>
+
+<!-- 3. ADD PLAYLIST MODAL -->
+<div class="diary-modal-backdrop" id="modalAddMusic" aria-hidden="true">
+    <div class="diary-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="addMusicTitle">
+        <button class="modal-close-icon" type="button" data-close-modal aria-label="Close dialog">✕</button>
+        <div class="modal-header">
+            <div class="eyebrow">CHAPTER III SOUNDTRACK</div>
+            <h3 id="addMusicTitle">Contribute a Soundtrack</h3>
+            <p>Share a Spotify playlist, YouTube track, or musical memory with visitors.</p>
+        </div>
+        <form id="formAddMusic" class="modal-form" novalidate>
+            <div class="hp-trap" aria-hidden="true">
+                <input type="text" name="website_url" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="form-grid-2">
+                <div class="form-group">
+                    <label for="musicPlatform">PLATFORM *</label>
+                    <select id="musicPlatform" name="platform" required>
+                        <option value="spotify">Spotify</option>
+                        <option value="youtube">YouTube</option>
+                        <option value="other">Other Link</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="musicAuthor">CONTRIBUTOR NAME</label>
+                    <input id="musicAuthor" name="author" type="text" maxlength="40" placeholder="Your name or alias">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="musicTitle">PLAYLIST OR SONG TITLE *</label>
+                <input id="musicTitle" name="title" type="text" required maxlength="100" placeholder="e.g. Midnight Ambient & Stars">
+            </div>
+
+            <div class="form-group">
+                <label for="musicUrl">PLAYLIST OR SONG LINK (URL) *</label>
+                <input id="musicUrl" name="url" type="url" required placeholder="https://open.spotify.com/playlist/... or https://youtube.com/watch?v=...">
+                <small class="field-hint" id="musicUrlHint">Paste a public Spotify or YouTube link for automatic interactive preview.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="musicDesc">DESCRIPTION / WHY YOU LOVE IT</label>
+                <textarea id="musicDesc" name="desc" maxlength="400" rows="3" placeholder="Late night coding companions, gentle acoustics, or stormy weather vibes…"></textarea>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-text" data-close-modal>Cancel</button>
+                <button type="submit" class="diary-cta-btn" id="btnSubmitMusic">
+                    ✦ Add to Soundtrack
+                </button>
+            </div>
+            <div class="modal-feedback" id="musicModalStatus" aria-live="polite"></div>
+        </form>
+    </div>
+</div>
+
+<!-- 4. READ BLOG MODAL (Full article view) -->
+<div class="diary-modal-backdrop" id="modalReadBlog" aria-hidden="true">
+    <div class="diary-modal-dialog reading-dialog" role="dialog" aria-modal="true" aria-labelledby="readBlogModalTitle">
+        <button class="modal-close-icon" type="button" data-close-modal aria-label="Close reading view">✕</button>
+        <div class="reading-meta">
+            <span class="reading-tag" id="readBlogTag">Reflections</span>
+            <span class="reading-date" id="readBlogDate">October 22, 2026</span>
+            <span class="reading-author" id="readBlogAuthor">By Orion</span>
+        </div>
+        <h2 class="reading-title" id="readBlogModalTitle">Title</h2>
+        <div class="reading-body" id="readBlogBody"></div>
+
+        <div class="reading-footer">
+            <div class="reading-ownership-actions" id="readBlogAuthorActions" style="display:none;">
+                <button type="button" class="btn-action-edit" id="btnEditOwnedBlog">✏ Edit Thought</button>
+                <button type="button" class="btn-action-delete" id="btnDeleteOwnedBlog">🗑 Delete</button>
+            </div>
+            <button type="button" class="btn-report-flag" id="btnReportCurrentBlog">🚩 Report Entry</button>
+        </div>
+    </div>
+</div>
+
+<!-- 5. ART LIGHTBOX MODAL -->
+<div class="diary-modal-backdrop lightbox-backdrop" id="modalArtLightbox" aria-hidden="true">
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Full size artwork preview">
+        <button class="modal-close-icon lightbox-close" type="button" data-close-modal aria-label="Close artwork view">✕</button>
+        <div class="lightbox-media-wrapper">
+            <img id="lightboxImg" src="" alt="Artwork full view">
+        </div>
+        <div class="lightbox-details">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle">Artwork Title</h3>
+                <div class="lightbox-creator" id="lightboxAuthor">By Artist</div>
+                <div class="lightbox-date" id="lightboxDate">Date</div>
+                <p class="lightbox-caption" id="lightboxCaption"></p>
+            </div>
+            <div class="lightbox-footer-actions">
+                <div id="lightboxAuthorActions" style="display:none;">
+                    <button type="button" class="btn-action-delete" id="btnDeleteOwnedArt">🗑 Delete My Art</button>
+                </div>
+                <button type="button" class="btn-report-flag" id="btnReportCurrentArt">🚩 Report Image</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 6. REPORT DIALOG MODAL -->
+<div class="diary-modal-backdrop" id="modalReport" aria-hidden="true">
+    <div class="diary-modal-dialog compact-dialog" role="dialog" aria-modal="true" aria-labelledby="reportModalTitle">
+        <button class="modal-close-icon" type="button" data-close-modal aria-label="Close dialog">✕</button>
+        <div class="modal-header">
+            <div class="eyebrow">COMMUNITY SAFETY</div>
+            <h3 id="reportModalTitle">Report Inappropriate Content</h3>
+            <p>Our collaborative space is open to everyone. When 3 community members report an item, it is automatically hidden from public view.</p>
+        </div>
+        <form id="formReport" class="modal-form" novalidate>
+            <input type="hidden" id="reportTargetId">
+            <div class="form-group">
+                <label>REASON FOR REPORT *</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="reportReason" value="spam" checked> Spam / Automated junk / Ads
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="reportReason" value="inappropriate"> Inappropriate, offensive, or explicit
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="reportReason" value="harassment"> Harassment or hate speech
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="reportReason" value="copyright"> Copyright infringement
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="reportReason" value="other"> Other violation
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="reportDetails">OPTIONAL DETAILS</label>
+                <textarea id="reportDetails" name="details" maxlength="300" rows="2" placeholder="Briefly describe why this content should be removed…"></textarea>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn-text" data-close-modal>Cancel</button>
+                <button type="submit" class="diary-cta-btn btn-danger" id="btnSubmitReport">
+                    🚩 Submit Report
+                </button>
+            </div>
+            <div class="modal-feedback" id="reportModalStatus" aria-live="polite"></div>
+        </form>
+    </div>
+    </div>
+</div>
+<!-- End of #diaryInside -->

@@ -1,0 +1,160 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#05070d">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+    <title>Parth Yadav — Portfolio</title>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="shared/shared.css">
+
+    <!-- Layer styles -->
+    <link rel="stylesheet" href="layer1-home/home.css">
+    <link rel="stylesheet" href="layer2-about/about.css">
+    <link rel="stylesheet" href="layer3-projects/projects.css">
+    <link rel="stylesheet" href="layer4-achievements/achievements.css">
+    <link rel="stylesheet" href="layer5-diary/diary.css">
+</head>
+
+<body>
+
+    <!-- Site header -->
+    <header class="site-header">
+
+        <a class="brand" href="#home">
+            <span class="orbit" aria-hidden="true"></span>
+            <span>PARTH YADAV</span>
+        </a>
+
+        <nav class="nav" id="nav">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#diary">Diary</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-tools">
+
+            <button
+                class="sound-button"
+                id="soundBtn"
+                type="button"
+                aria-pressed="false"
+            >
+                ♫ <span id="soundLabel">Sound off</span>
+            </button>
+
+            <button
+                class="menu-button"
+                id="menuBtn"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+    </header>
+
+    <!-- Main portfolio sections -->
+    <main>
+
+        <section
+            class="page"
+            id="home"
+            data-layer="layer1-home/home.html"
+        >
+            <div class="layer-loading">
+                Loading Home…
+            </div>
+        </section>
+
+        <section
+            class="page"
+            id="about"
+            data-layer="layer2-about/about.html"
+        >
+            <div class="layer-loading">
+                Loading About…
+            </div>
+        </section>
+
+        <section
+            class="page"
+            id="projects"
+            data-layer="layer3-projects/projects.html"
+        >
+            <div class="layer-loading">
+                Loading Projects…
+            </div>
+        </section>
+
+        <section
+            class="page"
+            id="achievements"
+            data-layer="layer4-achievements/achievements.html"
+        >
+            <div class="layer-loading">
+                Loading Achievements…
+            </div>
+        </section>
+
+        <section
+            class="page"
+            id="diary"
+            data-layer="layer5-diary/diary.html"
+        >
+            <div class="layer-loading">
+                Loading Diary…
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Contact footer -->
+    <footer class="site-footer" id="contact">
+
+        <span>
+            SAME SKY. DIFFERENT PERSPECTIVES. MORE POSSIBILITIES.
+        </span>
+
+        <span>
+            Contact: replace this line with your preferred public email
+            or contact link.
+        </span>
+
+    </footer>
+
+    <!-- Notification message -->
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+    <!-- Shared JavaScript -->
+    <script src="shared/shared.js" defer></script>
+
+    <!-- Layer JavaScript -->
+    <script src="layer1-home/home.js" defer></script>
+    <script src="layer2-about/about.js" defer></script>
+    <script src="layer3-projects/projects.js" defer></script>
+    <script src="layer4-achievements/achievements.js" defer></script>
+    <!-- Supabase Client & Backend Configuration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="layer5-diary/supabase-config.js" defer></script>
+    <script src="layer5-diary/diary.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+
+#home {
+    display: flex;
+    align-items: center;
+    padding: 130px clamp(28px, 8vw, 130px) 90px;
+    background: #050a14;
+}
+
+.home-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 75% 40%,
+            #174d8b80,
+            transparent 48%
+        ),
+        linear-gradient(110deg, #02050b, #071a34);
+}
+
+.home-video iframe {
+    position: absolute;
+    width: 177.78vh;
+    height: 56.25vw;
+    min-width: 100%;
+    min-height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 0;
+    opacity: 0.72;
+    pointer-events: none;
+}
+
+.home-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(
+            90deg,
+            #02060de0,
+            #02081299 42%,
+            #030a162e
+        ),
+        linear-gradient(
+            0deg,
+            #02070fb8,
+            transparent 45%
+        );
+}
+
+.home-content {
+    position: relative;
+    z-index: 2;
+    max-width: 690px;
+    animation: rise 0.9s both;
+}
+
+.home-content h1 {
+    font-size: clamp(66px, 10vw, 130px);
+    line-height: 0.88;
+    letter-spacing: -0.075em;
+    margin: 25px 0 0;
+}
+
+.home-content h1 span {
+    display: block;
+    color: #8eb2ff;
+}
+
+.tagline {
+    font-size: 11px;
+    line-height: 2.1;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    max-width: 480px;
+    margin: 28px 0;
+    color: #ffffffd6;
+}
+
+.home-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.socials {
+    display: flex;
+    gap: 18px;
+    margin-top: 34px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.socials a {
+    opacity: 0.8;
+}
+
+.socials a:hover {
+    color: var(--blue);
+}
+
+.home-foot {
+    position: absolute;
+    z-index: 2;
+    bottom: 25px;
+    left: clamp(28px, 8vw, 130px);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    line-height: 2;
+    color: #ffffffb8;
+}
+
+.scroll-mark {
+    position: absolute;
+    z-index: 2;
+    right: 35px;
+    bottom: 30px;
+    writing-mode: vertical-rl;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: #ffffffb8;
+}
+
+/* Responsive styles */
+@media (max-width: 760px) {
+    #home {
+        padding: 120px 28px 100px;
+    }
+
+    .home-content h1 {
+        font-size: clamp(62px, 17vw, 95px);
+    }
+
+    .tagline {
+        font-size: 9px;
+        letter-spacing: 0.13em;
+    }
+
+    .home-foot {
+        left: 28px;
+        font-size: 8px;
+    }
+
+    .scroll-mark {
+        right: 14px;
+    }
+}

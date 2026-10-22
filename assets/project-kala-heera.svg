@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">KALA HEERA engineering concept illustration</title><desc id="desc">A dark mine tunnel rendered as a technical digital-twin grid with abstract sensor telemetry.</desc>
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#1b2024"/><stop offset="1" stop-color="#080b0e"/></linearGradient><linearGradient id="rock" x2="0" y2="1"><stop stop-color="#53514a"/><stop offset="1" stop-color="#252927"/></linearGradient><linearGradient id="glow"><stop stop-color="#dbb884"/><stop offset="1" stop-color="#8e704a"/></linearGradient></defs>
+  <rect width="640" height="360" fill="url(#bg)"/><path d="M0 360V174l72-44 63 13 45-61 78 25 61-47 77 40 66-31 70 49 108-3v245Z" fill="url(#rock)"/>
+  <path d="M80 360V220q240-236 480 0v140" fill="#121719" stroke="#b79b72" stroke-width="3"/><path d="M117 360V231q203-194 406 0v129M154 360V245q166-152 332 0v115" fill="none" stroke="#7f8179" stroke-width="2"/>
+  <path d="M320 104v256M80 244h480M116 208h408M154 174h332M192 145h256M230 122h180" fill="none" stroke="#9d9d91" stroke-width="1" opacity=".55"/>
+  <path d="M0 328 120 278l90 25 106-62 86 26 97-70 141 39v124H0Z" fill="#171c1d"/>
+  <g fill="url(#glow)" stroke="#f1d3a2" stroke-width="1"><circle cx="194" cy="216" r="7"/><circle cx="422" cy="204" r="7"/><circle cx="321" cy="145" r="7"/></g>
+  <g fill="none" stroke="#d3b287" stroke-width="1" opacity=".75"><path d="M194 216 321 145 422 204M194 216v76m228-88v88m-101-147v95"/><circle cx="194" cy="216" r="22"/><circle cx="422" cy="204" r="22"/></g>
+  <rect x="26" y="25" width="178" height="45" rx="5" fill="#0c1114e8" stroke="#c0a47b"/><text x="40" y="43" fill="#e3d6c0" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">KALA HEERA</text><text x="40" y="59" fill="#aaa99f" font-family="Arial,sans-serif" font-size="8" letter-spacing="1.2">DIGITAL TWIN / CONCEPT</text>
+  <path d="M491 34h112v75H491z" fill="#0b1012dc" stroke="#ffffff3b"/><path d="M507 91V78l16-9 12 5 17-20 13 8 21-13" fill="none" stroke="#d7bb8e" stroke-width="2"/><path d="M507 97h86M507 48v49" stroke="#ffffff44" stroke-width="1"/><text x="507" y="45" fill="#c6c5bc" font-family="Arial,sans-serif" font-size="7" letter-spacing="1">SIMULATED TELEMETRY</text>
+</svg>

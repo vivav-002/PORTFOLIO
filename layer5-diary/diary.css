@@ -1,0 +1,1628 @@
+/* ==============================================================================
+   PORTFOLIA — LAYER 5: DIARY STYLES
+   Cinematic Starlight Atmosphere & Collaborative Parchment Sanctuary
+   ============================================================================== */
+
+#diary {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 70px;
+    background: radial-gradient(
+        ellipse at 50% 43%,
+        #18233b 0%,
+        #080d1b 43%,
+        #02040a 100%
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+#diary:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.55;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, #fff 99%, transparent),
+        radial-gradient(1.5px 1.5px at 70% 32%, #fff 99%, transparent),
+        radial-gradient(1px 1px at 40% 75%, #ffffffbd 99%, transparent),
+        radial-gradient(1px 1px at 85% 80%, #ffffff88 99%, transparent);
+    background-size:
+        240px 210px,
+        310px 270px,
+        390px 330px,
+        450px 380px;
+    pointer-events: none;
+}
+
+.diary-intro {
+    width: min(430px, 42vw);
+    position: relative;
+    z-index: 1;
+}
+
+.diary-intro .eyebrow {
+    color: #c9c4db;
+    letter-spacing: 0.25em;
+    font-size: 11px;
+}
+
+.diary-intro h2 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(30px, 4vw, 48px);
+    margin: 14px 0;
+    color: #f7f7fa;
+    line-height: 1.15;
+}
+
+.diary-intro p {
+    font-size: 13px;
+    color: #c7c4d2;
+    line-height: 1.8;
+}
+
+.book-stage {
+    perspective: 1500px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.book {
+    width: clamp(230px, 28vw, 340px);
+    height: clamp(330px, 40vw, 465px);
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(-14deg) rotateX(3deg);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: pointer;
+    filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.75));
+    border: 0;
+    padding: 0;
+    background: none;
+}
+
+.book:hover,
+.book:focus-visible {
+    transform: rotateY(-6deg) rotateX(1deg) translateY(-8px);
+    outline: none;
+}
+
+.book-cover {
+    position: absolute;
+    inset: 0;
+    border: 1px solid #c9c4b5;
+    background: linear-gradient(
+        135deg,
+        #20212a,
+        #07080d 45%,
+        #191a22
+    );
+    border-radius: 4px 12px 12px 4px;
+    box-shadow:
+        inset 9px 0 12px #0009,
+        inset -2px 0 0 #ffffff1c;
+    overflow: hidden;
+}
+
+.book-cover:before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid #c8c2b0;
+    pointer-events: none;
+}
+
+.cover-ornament {
+    position: absolute;
+    inset: 30px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: #d6d0c2;
+    text-align: center;
+}
+
+.cover-top {
+    font: 11px Georgia, serif;
+    letter-spacing: 0.2em;
+}
+
+.cover-number {
+    position: absolute;
+    right: 28px;
+    top: 29px;
+    font: 27px Georgia, serif;
+    color: #c9c4b5;
+}
+
+.cover-emblem {
+    width: 175px;
+    height: 175px;
+    border: 1px solid #c9c4b6;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover-emblem svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cover-emblem:before,
+.cover-emblem:after {
+    content: "";
+    position: absolute;
+    border: 1px solid #bcb7a866;
+    border-radius: 50%;
+}
+
+.cover-emblem:before {
+    inset: 9px;
+}
+
+.cover-emblem:after {
+    inset: 20px;
+}
+
+.cover-art {
+    width: 106px;
+    height: 106px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: radial-gradient(circle at 45% 35%, #47516a, #090a10 70%);
+    border: 1px solid #c9c4b6;
+    display: grid;
+    place-items: center;
+    color: #d8d3c9;
+    font: 11px Georgia, serif;
+    text-align: center;
+    padding: 0;
+}
+
+.cover-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 46%;
+    filter: brightness(0.9) saturate(0.85);
+}
+
+.moon-row {
+    font-size: 14px;
+    letter-spacing: 2.5px;
+    color: #ded9cd;
+}
+
+.cover-title {
+    font: 24px / 0.94 Georgia, serif;
+    letter-spacing: -0.03em;
+}
+
+.cover-title small {
+    display: block;
+    font: 9px Georgia, serif;
+    letter-spacing: 0.26em;
+    margin-bottom: 6px;
+    color: #b0ab9f;
+}
+
+.book-spine {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: -15px;
+    width: 16px;
+    transform: rotateY(-65deg);
+    transform-origin: right;
+    background: linear-gradient(90deg, #050609, #55545a, #111217);
+    border: 1px solid #a9a49a;
+}
+
+.book-pages {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: -9px;
+    width: 10px;
+    transform: rotateY(70deg);
+    transform-origin: left;
+    background: repeating-linear-gradient(0deg, #b9b5ad 0 2px, #e5e0d5 2px 4px);
+}
+
+.book-hint {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: #d0cbdc;
+    text-transform: uppercase;
+}
+
+/* ==============================================================================
+   DIARY INSIDE VIEW (THE COLLABORATIVE SPACE)
+   ============================================================================== */
+
+#diary:has(#diaryInside.open),
+#diary.diary-open {
+    z-index: 500 !important;
+}
+
+.diary-inside {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    background: rgba(4, 6, 12, 0.96);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    display: none;
+    overflow-y: auto;
+    padding: 16px 20px 40px;
+}
+
+.diary-inside.open {
+    display: block;
+    animation: fadeIn 0.35s ease-out;
+}
+
+/* Toolbar */
+.diary-toolbar {
+    max-width: 1160px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 18px;
+    background: rgba(14, 18, 28, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 99px;
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 8px;
+    z-index: 30;
+}
+
+.toolbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.celestial-gem {
+    color: #9abaff;
+    font-size: 16px;
+    animation: starPulse 3s infinite ease-in-out;
+}
+
+@keyframes starPulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.toolbar-title {
+    font: 11px Georgia, serif;
+    letter-spacing: 0.24em;
+    color: #f0ecdf;
+    font-weight: 500;
+}
+
+.toolbar-badge {
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 99px;
+    background: rgba(154, 186, 255, 0.15);
+    color: #9abaff;
+    border: 1px solid rgba(154, 186, 255, 0.3);
+    letter-spacing: 0.05em;
+}
+
+.toolbar-badge.demo-mode {
+    background: rgba(255, 180, 80, 0.15);
+    color: #ffb450;
+    border-color: rgba(255, 180, 80, 0.35);
+}
+
+.toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.diary-tool-btn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+    color: #d6d9e0;
+    border-radius: 99px;
+    padding: 7px 14px;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.diary-tool-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.diary-close {
+    border: 1px solid rgba(255, 120, 120, 0.45);
+    background: rgba(255, 80, 80, 0.12);
+    color: #ffd0d0;
+    border-radius: 99px;
+    padding: 7px 16px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.diary-close:hover {
+    background: rgba(255, 80, 80, 0.25);
+    color: #fff;
+    border-color: rgba(255, 120, 120, 0.7);
+}
+
+/* Diary inner book folio */
+.diary-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    background: linear-gradient(125deg, #eee6d6 0%, #f7f1e4 50%, #eae1d0 100%);
+    color: #1a1a1c;
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    box-shadow: 0 35px 120px rgba(0, 0, 0, 0.85);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(220, 210, 190, 0.4);
+}
+
+/* Sidebar Tabs */
+.diary-tabs {
+    background: #141720;
+    color: #dedede;
+    padding: 28px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tabs-header {
+    padding: 0 10px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 6px;
+}
+
+.tabs-title {
+    font: 10px Georgia, serif;
+    letter-spacing: 0.25em;
+    color: #8f96a8;
+}
+
+.diary-tabs button {
+    text-align: left;
+    padding: 12px 14px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: #b8bac2;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+}
+
+.tab-icon {
+    font-size: 14px;
+    color: #9abaff;
+    width: 18px;
+    display: inline-block;
+    text-align: center;
+}
+
+.tab-label {
+    letter-spacing: 0.03em;
+    font-weight: 500;
+}
+
+.diary-tabs button.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-color: rgba(154, 186, 255, 0.4);
+    box-shadow: inset 0 0 12px rgba(154, 186, 255, 0.15);
+}
+
+.diary-tabs button:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.diary-vault-summary {
+    margin-top: auto;
+    padding: 14px 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+}
+
+.diary-vault-summary small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: #8c93a8;
+    margin-bottom: 4px;
+}
+
+.vault-count-text {
+    font-size: 11px;
+    color: #c9ccd6;
+    line-height: 1.4;
+}
+
+/* Main pages */
+.diary-page {
+    padding: clamp(28px, 4.5vw, 55px);
+    font-family: Georgia, serif;
+    overflow-y: auto;
+    max-height: 84vh;
+}
+
+.diary-content {
+    display: none;
+}
+
+.diary-content.active {
+    display: block;
+    animation: rise 0.35s ease-out;
+}
+
+.chapter-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid rgba(27, 27, 27, 0.16);
+    padding-bottom: 18px;
+    margin-bottom: 24px;
+}
+
+.chapter-header .eyebrow {
+    color: #6a6258;
+    letter-spacing: 0.28em;
+    font-size: 10px;
+    font-family: system-ui, sans-serif;
+}
+
+.chapter-header h2 {
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 400;
+    margin: 6px 0 10px;
+    color: #17181c;
+    letter-spacing: -0.02em;
+}
+
+.chapter-desc {
+    margin: 0;
+    color: #4a453f;
+    font-size: 14px;
+    line-height: 1.65;
+    max-width: 650px;
+}
+
+.diary-cta-btn {
+    background: #151821;
+    color: #f5f3ed;
+    border: 1px solid #363b49;
+    border-radius: 99px;
+    padding: 11px 22px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    font-family: system-ui, sans-serif;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: all 0.2s;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.diary-cta-btn:hover {
+    background: #232838;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Category Filters */
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.cat-pill {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(160, 150, 135, 0.45);
+    color: #4f4840;
+    padding: 5px 14px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-family: system-ui, sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cat-pill:hover {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #8c8274;
+}
+
+.cat-pill.active {
+    background: #151821;
+    color: #fff;
+    border-color: #151821;
+}
+
+/* ==============================================================================
+   SECTION 1: BLOGS & THOUGHTS FEED
+   ============================================================================== */
+
+.blog-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.blog-card {
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(164, 155, 140, 0.35);
+    border-radius: 6px;
+    padding: 22px 24px;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    position: relative;
+}
+
+.blog-card:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(40, 30, 20, 0.08);
+}
+
+.blog-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    font-family: system-ui, sans-serif;
+    color: #6d665c;
+    margin-bottom: 8px;
+}
+
+.blog-author-badge {
+    font-weight: 600;
+    color: #27282c;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.badge-author-owned {
+    background: #9abaff33;
+    color: #224388;
+    border: 1px solid #9abaff88;
+    padding: 2px 7px;
+    border-radius: 99px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.blog-card-title {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 10px;
+    color: #141517;
+    cursor: pointer;
+}
+
+.blog-card-title:hover {
+    color: #2d4c88;
+}
+
+.blog-card-excerpt {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3f3b35;
+    margin: 0 0 16px;
+}
+
+.blog-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    font-family: system-ui, sans-serif;
+    font-size: 11px;
+    border-top: 1px solid rgba(164, 155, 140, 0.25);
+    padding-top: 12px;
+}
+
+.blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.blog-tag-pill {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #5d564c;
+    font-size: 10px;
+}
+
+.blog-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-read-full {
+    background: none;
+    border: 0;
+    color: #1c2333;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    font-size: 11px;
+}
+
+.btn-read-full:hover {
+    text-decoration: underline;
+}
+
+.btn-report-flag {
+    background: none;
+    border: 0;
+    color: #8c8275;
+    font-size: 11px;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.btn-report-flag:hover {
+    color: #b03535;
+    background: rgba(176, 53, 53, 0.08);
+}
+
+.btn-action-edit,
+.btn-action-delete {
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    font-size: 10px;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+
+.btn-action-edit:hover {
+    background: rgba(45, 76, 136, 0.1);
+    color: #2d4c88;
+}
+
+.btn-action-delete:hover {
+    background: rgba(176, 53, 53, 0.12);
+    color: #b03535;
+    border-color: rgba(176, 53, 53, 0.4);
+}
+
+/* ==============================================================================
+   SECTION 2: MY ART GALLERY
+   ============================================================================== */
+
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.art-card {
+    background: #141720;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.art-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.art-thumbnail-wrap {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    position: relative;
+    background: #0b0d14;
+}
+
+.art-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.art-card:hover .art-img {
+    transform: scale(1.05);
+}
+
+.art-card-info {
+    padding: 14px;
+    background: #161823;
+    color: #e5e3dd;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.art-card-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    color: #f7f5ed;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.art-card-meta {
+    font-size: 11px;
+    color: #9ea3b5;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ==============================================================================
+   SECTION 3: SOUNDTRACK
+   ============================================================================== */
+
+.music-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.music-card {
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(164, 155, 140, 0.35);
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.music-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.music-platform-badge {
+    font-size: 10px;
+    font-family: system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.music-platform-badge.spotify {
+    background: #1db95426;
+    color: #0b8034;
+    border: 1px solid #1db95466;
+}
+
+.music-platform-badge.youtube {
+    background: #ff000022;
+    color: #b00000;
+    border: 1px solid #ff000055;
+}
+
+.music-card-title {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    color: #15161a;
+}
+
+.music-card-meta {
+    font-size: 11px;
+    color: #666;
+    font-family: system-ui, sans-serif;
+}
+
+.music-embed-container {
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.music-embed-container iframe {
+    width: 100%;
+    border: 0;
+    display: block;
+}
+
+.music-card-desc {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.music-card-link-fallback {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #1b2845;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: system-ui, sans-serif;
+    text-decoration: underline;
+}
+
+.music-policy-note {
+    margin-top: 25px;
+    border-top: 1px solid rgba(164, 155, 140, 0.25);
+    padding-top: 14px;
+}
+
+/* ==============================================================================
+   SECTION 4: GUESTBOOK
+   ============================================================================== */
+
+.guestbook-composer-card {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(164, 155, 140, 0.45);
+    border-radius: 6px;
+    padding: 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+}
+
+.guest-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font: 10px system-ui, sans-serif;
+    letter-spacing: 0.12em;
+    color: #554f47;
+    font-weight: 600;
+}
+
+.guest-form input,
+.guest-form textarea,
+.modal-form input,
+.modal-form textarea,
+.modal-form select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #aba090;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.85);
+    color: #191a1e;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.guest-form input:focus,
+.guest-form textarea:focus,
+.modal-form input:focus,
+.modal-form textarea:focus,
+.modal-form select:focus {
+    outline: none;
+    border-color: #274070;
+    box-shadow: 0 0 0 3px rgba(39, 64, 112, 0.15);
+}
+
+.char-countdown {
+    text-align: right;
+    font-size: 11px;
+    color: #7a7266;
+    font-family: system-ui, sans-serif;
+}
+
+.form-footer-action {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.form-status-msg {
+    font-size: 12px;
+    font-family: system-ui, sans-serif;
+    color: #254a88;
+}
+
+.guestbook-feed-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.guestbook-feed-title {
+    font: 11px system-ui, sans-serif;
+    letter-spacing: 0.2em;
+    color: #726b60;
+    font-weight: 600;
+}
+
+.guestbook-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.guest-card {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(164, 155, 140, 0.3);
+    border-radius: 6px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.guest-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: system-ui, sans-serif;
+    font-size: 11px;
+}
+
+.guest-card-author {
+    font-weight: 600;
+    color: #1a1a1c;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.guest-card-date {
+    color: #777;
+}
+
+.guest-card-message {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.guest-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+/* ==============================================================================
+   MODALS AND DIALOGS
+   ============================================================================== */
+
+.diary-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000 !important;
+    background: rgba(5, 7, 14, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: none;
+    place-items: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.diary-modal-backdrop.open {
+    display: grid !important;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.diary-modal-dialog {
+    background: #fbf8f1;
+    color: #1a1a1d;
+    max-width: 620px;
+    width: 100%;
+    border-radius: 8px;
+    padding: clamp(24px, 4vw, 36px);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+    border: 1px solid #d4cbb8;
+    position: relative;
+    animation: rise 0.25s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.diary-modal-dialog.reading-dialog {
+    max-width: 740px;
+}
+
+.diary-modal-dialog.compact-dialog {
+    max-width: 500px;
+}
+
+.modal-close-icon {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: 0;
+    font-size: 18px;
+    color: #7a7266;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    line-height: 1;
+}
+
+.modal-close-icon:hover {
+    color: #000;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.modal-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(164, 155, 140, 0.3);
+    padding-bottom: 14px;
+}
+
+.modal-header h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 4px 0 6px;
+    color: #17181c;
+}
+
+.modal-header p {
+    font-size: 13px;
+    color: #5d564d;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* File Drop Zone */
+.drop-zone {
+    border: 2px dashed #aba090;
+    border-radius: 6px;
+    padding: 24px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.drop-zone:hover,
+.drop-zone.dragover {
+    border-color: #274070;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.file-input-hidden {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.drop-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: #554f47;
+    font-family: system-ui, sans-serif;
+    font-size: 13px;
+}
+
+.drop-icon {
+    font-size: 28px;
+}
+
+.drop-preview {
+    position: relative;
+    display: inline-block;
+    max-height: 220px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.drop-preview img {
+    max-height: 200px;
+    max-width: 100%;
+    display: block;
+    border-radius: 4px;
+}
+
+.btn-clear-preview {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: 0;
+    border-radius: 99px;
+    padding: 4px 10px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.upload-progress-wrapper {
+    height: 8px;
+    background: #e0d8c8;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 6px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: #274070;
+    transition: width 0.2s;
+}
+
+.progress-label {
+    font-size: 11px;
+    font-family: system-ui, sans-serif;
+    color: #4a5468;
+    display: block;
+    margin-top: 4px;
+}
+
+.modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.btn-text {
+    background: none;
+    border: 0;
+    color: #665f54;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: system-ui, sans-serif;
+}
+
+.btn-text:hover {
+    color: #111;
+}
+
+.btn-danger {
+    background: #a82828 !important;
+    border-color: #851c1c !important;
+}
+
+.btn-danger:hover {
+    background: #c22f2f !important;
+}
+
+.modal-feedback {
+    font-size: 12px;
+    font-family: system-ui, sans-serif;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: none;
+}
+
+.modal-feedback.success {
+    display: block;
+    background: #d4edda;
+    color: #155724;
+}
+
+.modal-feedback.error {
+    display: block;
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Lightbox Modal */
+.lightbox-dialog {
+    background: #0d0f17;
+    color: #f0ede6;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.9);
+    position: relative;
+}
+
+.lightbox-close {
+    color: #fff;
+    z-index: 10;
+}
+
+.lightbox-media-wrapper {
+    background: #05060a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+    padding: 16px;
+}
+
+.lightbox-media-wrapper img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.lightbox-details {
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    background: #111420;
+}
+
+.lightbox-info h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 6px;
+    color: #f7f5ee;
+}
+
+.lightbox-creator {
+    font-size: 12px;
+    color: #9abaff;
+    font-family: system-ui, sans-serif;
+    margin-bottom: 4px;
+}
+
+.lightbox-date {
+    font-size: 11px;
+    color: #888;
+    font-family: system-ui, sans-serif;
+    margin-bottom: 14px;
+}
+
+.lightbox-caption {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #d1cdc4;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.lightbox-footer-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 14px;
+}
+
+/* Reading View Dialog */
+.reading-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    font-family: system-ui, sans-serif;
+    color: #6a6258;
+    margin-bottom: 10px;
+}
+
+.reading-tag {
+    background: #e2dac9;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.reading-title {
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 400;
+    margin: 0 0 20px;
+    color: #111216;
+}
+
+.reading-body {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #2c2925;
+    white-space: pre-wrap;
+    word-break: break-word;
+    border-top: 1px solid rgba(164, 155, 140, 0.3);
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+.reading-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(164, 155, 140, 0.3);
+    padding-top: 16px;
+}
+
+/* Device Vault Dialog */
+.vault-feature-box {
+    background: rgba(39, 64, 112, 0.08);
+    border: 1px solid rgba(39, 64, 112, 0.2);
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+    font-family: system-ui, sans-serif;
+    font-size: 13px;
+    color: #243555;
+}
+
+.vault-feature-box ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.vault-backup-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.vault-backup-section textarea {
+    font-family: monospace;
+    font-size: 11px;
+    background: #eae2d3;
+    border: 1px solid #c2b7a4;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.vault-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-vault-action {
+    background: #1e2230;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 14px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: system-ui, sans-serif;
+}
+
+.btn-vault-action:hover {
+    background: #2f364c;
+}
+
+/* Cloud Status Dialog */
+.cloud-status-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    background: #e5ded0;
+    border: 1px solid #cac0af;
+    font-family: system-ui, sans-serif;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.status-indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #28a745;
+    box-shadow: 0 0 8px #28a745;
+}
+
+.cloud-steps {
+    font-family: system-ui, sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.cloud-steps h4 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #17181d;
+}
+
+.cloud-steps ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.cloud-steps code {
+    background: #e6dfd1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* Loading & Skeletons */
+.diary-loading-state {
+    padding: 40px 20px;
+    text-align: center;
+    color: #6a6258;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    font-family: system-ui, sans-serif;
+    font-size: 13px;
+}
+
+.celestial-spinner {
+    width: 28px;
+    height: 28px;
+    border: 2px solid rgba(154, 186, 255, 0.2);
+    border-top-color: #274070;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.hp-trap {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ==============================================================================
+   RESPONSIVE DESIGN (Tablets & Mobile)
+   ============================================================================== */
+
+@media (max-width: 860px) {
+    #diary {
+        padding: 100px 16px 50px;
+    }
+
+    .diary-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .diary-tabs {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 10px 14px;
+        gap: 6px;
+    }
+
+    .diary-tabs button {
+        white-space: nowrap;
+        padding: 8px 12px;
+    }
+
+    .tabs-header,
+    .diary-vault-summary {
+        display: none;
+    }
+
+    .diary-page {
+        padding: 24px 18px;
+        max-height: none;
+    }
+
+    .lightbox-dialog {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .toolbar-title {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .chapter-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .diary-cta-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .art-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .art-thumbnail-wrap {
+        height: 140px;
+    }
+
+    .diary-toolbar {
+        border-radius: 12px;
+        flex-wrap: wrap;
+    }
+}
