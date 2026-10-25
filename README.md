@@ -1,6 +1,6 @@
 # PORTFOLIA — My Personal Portfolio
 
-Hey, I'm Parth Yadav, and this is PORTFOLIA.
+Hey, I am VIVAC, and this is PORTFOLIA.
 
 I wanted to make a portfolio, but I didn't really want to follow the usual format of putting everything on one page and calling it a day. I wanted to experiment with how a portfolio could actually feel when someone visits it. That's why I divided the website into five layers, each with its own design, background, and purpose.
 
