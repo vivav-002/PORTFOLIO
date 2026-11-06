@@ -7,6 +7,8 @@ PORTFOLIA is my personal portfolio website. It has my projects, achievements, sk
 I wanted to experiment with the idea of a portfolio being more than just a collection of cards, links and information. That's what led me to build PORTFOLIA.
 
 ## The main thing — Diary
+<img width="1917" height="916" alt="Screenshot 2026-10-23 002435" src="https://github.com/user-attachments/assets/4b8a3e96-5bc0-4dc8-a281-641a81870530" />
+
 
 The Diary is probably my favourite part of this entire project.
 
@@ -17,6 +19,8 @@ I wanted this section to feel different from the rest of the website. It's more 
 The guestbook also gives visitors a way to leave something behind instead of just looking around and leaving.
 
 And if you're an ORV reader, you might recognise where some of the inspiration comes from.
+<img width="1897" height="833" alt="Screenshot 2026-10-22 234807" src="https://github.com/user-attachments/assets/7d4c882e-fe6f-490c-b830-fa98194bb847" />
+
 
 ## The rest of the portfolio
 
