@@ -1,9 +1,10 @@
-#PORTFOLIA
+# PORTFOLIA
+
 Hey, I'm VIVAC, and welcome to PORTFOLIA!
 
 It's my personal space on the web where I've put together my projects, achievements, interests and a few things that are simply a part of me. I wanted to make something beyond a typical portfolio, something people could actually explore and interact with.
 
-The main thing — Diary
+### The main thing — Diary
 The Diary is probably my favourite part of the entire website.
 <img width="1917" height="916" alt="Screenshot 2026-10-23 002435" src="https://github.com/user-attachments/assets/440b9397-11ab-4927-9d73-0d944605722a" />
 
@@ -12,7 +13,7 @@ It's an interactive 3D book that visitors can open and explore. Inside, I've add
 
 I wanted this part to feel more personal. Not everything about me can be shown through projects or technical skills, so I thought of making a separate space for things that I enjoy and want to share.
 
-There's also a guestbook where visitors can leave their messages. I thought it would be nice to have something where people can interact with the website instead of just going through the pages.
+There's also a guesttab where visitors can leave their messages. I thought it would be nice to have something where people can interact with the website instead of just going through the pages.
 
 And if you've read ORV, you might notice a bit of inspiration behind the Diary.
 <img width="1897" height="833" alt="Screenshot 2026-10-22 234807" src="https://github.com/user-attachments/assets/f5bd803c-abba-4458-9e92-228bd8159e40" />
@@ -27,7 +28,7 @@ Projects: Some of the things I've worked on and built.
 Achievements & Skills: My achievements, technical skills and experience.
 I wanted every section to have its own identity while still feeling like a part of the same website.
 
-Technologies used
+### Technologies used
 I built PORTFOLIA using HTML, CSS and JavaScript. I also used a few other tools to make everything work.
 
 HTML5: For the structure and content of the website.
