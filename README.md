@@ -1,10 +1,10 @@
-PORTFOLIA
+# PORTFOLIA
 
 Hi! Welcome to PORTFOLIA!
 
 This is my website where I have included my projects, accomplishments, interests and some things that are just part of me. I wanted to create something that wasn’t a standard portfolio.
 
-Main Section - Diary
+## Main Section - Diary
 
 This is probably my favourite part of the whole site. 
 <img width="1917" height="916" alt="Screenshot 2026-10-23 002435" src="https://github.com/user-attachments/assets/8b5584d4-3247-4918-9146-f1d5c1db6c45" />
@@ -24,7 +24,7 @@ Other sections of the portfolio As well as the diary section there are 4 other s
 
 Home - This is the homepage of the site. It has a video background and navigation. About - This is a section to get to know me a little. Projects - This shows some of the things I’ve created. Achievements & Skills - This shows my accomplishments, technical skills and experience. I wanted each section to have its own personality.
 
-Technology Used
+## Technology Used
 
 I have used HTML, CSS and JavaScript to create PORTFOLIA. I have also used a few other technologies.
 
