@@ -1,46 +1,37 @@
-# PORTFOLIA
+PORTFOLIA
 
-Hey, I'm VIVAC, and welcome to PORTFOLIA!
+Hi! Welcome to PORTFOLIA!
 
-It's my personal space on the web where I've put together my projects, achievements, interests and a few things that are simply a part of me. I wanted to make something beyond a typical portfolio, something people could actually explore and interact with.
+This is my website where I have included my projects, accomplishments, interests and some things that are just part of me. I wanted to create something that wasn’t a standard portfolio.
 
-### The main thing — Diary
-The Diary is probably my favourite part of the entire website.
-<img width="1917" height="916" alt="Screenshot 2026-10-23 002435" src="https://github.com/user-attachments/assets/440b9397-11ab-4927-9d73-0d944605722a" />
+Main Section - Diary
 
-
-It's an interactive 3D book that visitors can open and explore. Inside, I've added different sections for writing, art, music and a guestbook.
-
-I wanted this part to feel more personal. Not everything about me can be shown through projects or technical skills, so I thought of making a separate space for things that I enjoy and want to share.
-
-There's also a guesttab where visitors can leave their messages. I thought it would be nice to have something where people can interact with the website instead of just going through the pages.
-
-And if you've read ORV, you might notice a bit of inspiration behind the Diary.
-<img width="1897" height="833" alt="Screenshot 2026-10-22 234807" src="https://github.com/user-attachments/assets/f5bd803c-abba-4458-9e92-228bd8159e40" />
+This is probably my favourite part of the whole site. 
+<img width="1917" height="916" alt="Screenshot 2026-10-23 002435" src="https://github.com/user-attachments/assets/8b5584d4-3247-4918-9146-f1d5c1db6c45" />
 
 
-The rest of the portfolio
-Apart from the Diary, there are four other sections:
+It’s an interactive 3D diary which allows the viewer to open it. Within it I have added some sections to write in, draw, listen to music and a guestbook.
 
-Home: The main landing page with a video background and navigation.
-About: A little about me and what I do.
-Projects: Some of the things I've worked on and built.
-Achievements & Skills: My achievements, technical skills and experience.
-I wanted every section to have its own identity while still feeling like a part of the same website.
+I wanted to make this part of the site more personal. I don’t think I’d be able to show everything about me through my projects. So I thought of creating a section where I could put the things I enjoy doing.
 
-### Technologies used
-I built PORTFOLIA using HTML, CSS and JavaScript. I also used a few other tools to make everything work.
+The guesttab allows viewers to leave messages. I wanted to have something for people to interact with.
 
-HTML5: For the structure and content of the website.
-CSS3: For the design, layouts, animations and visual effects.
-JavaScript: For interactions, navigation and the 3D Diary experience.
-YouTube Embed: For the background video on the Home page.
-Supabase: For the Diary's backend, database and guestbook functionality.
-Git & GitHub: For version control and managing the project.
-I tried to keep the code organised as the project grew, with separate sections for different parts of the website and shared resources wherever needed.
+If you have read ORV you may notice the inspiration I had for my diary. 
+<img width="1897" height="833" alt="Screenshot 2026-10-22 234807" src="https://github.com/user-attachments/assets/6f461776-b9e8-4ad5-ac60-a42d6ec180ab" />
 
-PORTFOLIA is still a work in progress. I have quite a few ideas I'd like to try out, and I'm sure I'll keep adding new things and making changes along the way.
 
-For now, I'm happy with how it has turned out. It was a fun project to build, and I got to experiment with quite a few things along the way.
+Other sections of the portfolio As well as the diary section there are 4 other sections:
 
-Thanks for taking the time to explore it!
+Home - This is the homepage of the site. It has a video background and navigation. About - This is a section to get to know me a little. Projects - This shows some of the things I’ve created. Achievements & Skills - This shows my accomplishments, technical skills and experience. I wanted each section to have its own personality.
+
+Technology Used
+
+I have used HTML, CSS and JavaScript to create PORTFOLIA. I have also used a few other technologies.
+
+HTML5 - This was used to create the structure of the site. CSS3 - Used to create the styling, layout, animations and effects of the site. JavaScript - To allow interaction, navigation and 3D diary. YouTube Embed - To add a video to the background of the home page. Supabase - Used for the back-end, database and guestbook of the diary. Git & GitHub - Used for version control. I tried to keep my code neat by separating the sections into their own section and placing shared resources where needed.
+
+PORTFOLIA is still a work in progress. I have a lot of ideas I’d like to try out.
+
+However I’m happy with how it has turned out. It was a fun project to create and I was able to experiment with a lot of things.
+
+Thank you for taking the time to look at it!
