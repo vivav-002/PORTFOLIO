@@ -1,4 +1,4 @@
-PORTFOLIA
+#PORTFOLIA
 Hey, I'm VIVAC, and welcome to PORTFOLIA!
 
 It's my personal space on the web where I've put together my projects, achievements, interests and a few things that are simply a part of me. I wanted to make something beyond a typical portfolio, something people could actually explore and interact with.
